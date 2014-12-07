@@ -2,14 +2,14 @@ define([
   'angular',
   'angular-couch-potato',
   'angular-ui-router',
-  './services'
+  './services',
+  'common'
 ], function (angular, couchPotato) {
 
   'use strict';
 
   var module = angular.module('app.user', [
     'ui.router',
-    'ngCookies',
     'user.services',
     'app.common'
   ]);

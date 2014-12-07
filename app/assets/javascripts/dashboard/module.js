@@ -1,43 +1,43 @@
 define([
-	'angular',
-	'angular-couch-potato',
-	'angular-ui-router',
-	'common'
-], function (ng, couchPotato) {
+  'angular',
+  'angular-couch-potato',
+  'angular-ui-router'
+], function (angular, couchPotato) {
 
-	'use strict';
+  'use strict';
 
-	var module = ng.module('app.dashboard', [
-		'ui.router'
-	]);
+  var module = angular.module('app.dashboard', [
+    'ui.router'
+    //,'app.common'
+  ]);
 
-	module.config(['$stateProvider', 'userResolve', function($stateProvider, $couchPotatoProvider, userResolve) {
-		$stateProvider
-			.state('app.dashboard', {
-				url: '/dashboard',
-				views: {
-					"content@app": {
-						controller: 'DashboardCtrl',
-						templateUrl: '/assets/javascripts/dashboard/dashboard.html',
-						resolve: {
-							deps: $couchPotatoProvider.resolveDependencies([
-								'dashboard/DashboardCtrl'
-							]),
-							user: userResolve
-						}
-					}
-				},
-				data:{
-					title: 'Dashboard'
-				}
-			});
-	}]);
+  module.config(function($stateProvider, $couchPotatoProvider/*, userResolve*/) {
+    $stateProvider
+      .state('app.dashboard', {
+        url: '/dashboard',
+        views: {
+          "content@app": {
+            controller: 'DashboardCtrl',
+            templateUrl: '/assets/javascripts/dashboard/dashboard.html',
+            resolve: {
+              deps: $couchPotatoProvider.resolveDependencies([
+                'dashboard/DashboardCtrl'
+              ])
+              //,user: userResolve
+            }
+          }
+        },
+        data:{
+          title: 'Dashboard'
+        }
+      });
+  });
 
-	couchPotato.configureApp(module);
+  couchPotato.configureApp(module);
 
   module.run(function ($couchPotato) {
       module.lazy = $couchPotato;
   });
 
-	return module;
+  return module;
 });

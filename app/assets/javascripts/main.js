@@ -12,7 +12,7 @@
       'angular': ['../lib/angularjs/angular'],
       'angular-route': ['../lib/angularjs/angular-route'],
       'angular-cookies': ['../lib/angularjs/angular-cookies'],
-      'angular-bootstrap': '../lib/angular-ui/angular-ui.min',
+      'angular-bootstrap': '../lib/angular-ui-bootstrap/ui-bootstrap-tpls.min',
       'angular-ui-router': '../lib/angular-ui-router/angular-ui-router.min',
       'angular-couch-potato': 'plugin/angular-couch-potato/angular-couch-potato',
       'bootstrap': ['../lib/bootstrap/js/bootstrap'],
@@ -50,12 +50,11 @@
   // Load the app. This is kept minimal so it doesn't need much updating.
   require([
     'angular', 
-    'angular-cookies', 
-    'angular-route', 
+    'angular-cookies',
     'jquery', 
     'bootstrap', 
-    './app',
-    './includes'
+    'app',
+    'includes'
   ], function (angular) {
       angular.bootstrap(document, ['app']);
     }

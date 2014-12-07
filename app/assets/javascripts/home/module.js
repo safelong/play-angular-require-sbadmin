@@ -3,7 +3,6 @@ define([
   'angular-couch-potato',
   'angular-ui-router'
 ], function (ng, couchPotato) {
-
   'use strict';
 
   var module = ng.module('app.home', [
@@ -19,7 +18,7 @@ define([
         views: {
           root: {
             controller: 'HomeCtrl',
-            templateUrl: '/assets/javascripts/home/home.html',
+            templateUrl: '/assets/javascripts/home/layout.tpl.html',
             resolve: {
               deps: $couchPotatoProvider.resolveDependencies([
                 'home/FooterCtrl',

@@ -20,9 +20,10 @@ define([
     'ui.router',
     'ui.bootstrap',
 
-    'app.home', 
-    'app.user', 
-    'app.dashboard'
+    'app.common',
+    'app.dashboard',
+    'app.home'
+    //,'app.user'
   ]);
 
   couchPotato.configureApp(app);
@@ -31,7 +32,7 @@ define([
 
     // Intercept http calls.
     $provide.factory('ErrorHttpInterceptor', function ($q) {
-      //var errorCounter = 0;
+      // var errorCounter = 0;
       function notifyError(rejection){
           console.log(rejection);
           // $.bigBox({

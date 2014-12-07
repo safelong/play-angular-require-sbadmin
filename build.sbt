@@ -25,7 +25,7 @@ libraryDependencies ++= Seq(
   "org.webjars" % "jquery" % "1.11.1",
   "org.webjars" % "bootstrap" % "3.1.1-2" exclude("org.webjars", "jquery"),
   "org.webjars" % "angularjs" % "1.2.18" exclude("org.webjars", "jquery"),
-  "org.webjars" % "angular-ui" % "0.4.0-3" exclude("org.webjars", "angularjs"),
+  "org.webjars" % "angular-ui-bootstrap" % "0.12.0" exclude("org.webjars", "angularjs"),
   "org.webjars" % "angular-ui-router" % "0.2.13" exclude("org.webjars", "angularjs"),
   "org.webjars" % "angular-blocks" % "0.1.8-1" exclude("org.webjars", "angularjs"),
   "org.webjars" % "font-awesome" % "4.2.0",

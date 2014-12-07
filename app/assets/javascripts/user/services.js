@@ -11,8 +11,16 @@
 //     'yourprefix.common',
 //     'ngCookies'
 //   ]);
-define(['user/module'], function (module) {
+define([
+  'angular',
+  'common'
+], function (angular) {
   'use strict';
+
+  var module = angular.module('user.services', [
+    'ngCookies',
+    'app.common'
+  ]);
   
   module.factory('userService', ['$http', '$q', 'playRoutes', '$cookies', '$log', function ($http, $q, playRoutes, $cookies, $log) {
     var user, token = $cookies['XSRF-TOKEN'];

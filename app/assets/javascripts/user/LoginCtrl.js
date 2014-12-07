@@ -2,7 +2,7 @@ define(['user/module'], function (module) {
 
   'use strict';
 
-  return module.registerController('LoginCtrl', function ($scope, $location, userService) {
+  return module.registerController('LoginCtrl', ['$scope', '$location', 'userService', function ($scope, $location, userService) {
     $scope.credentials = {};
 
     $scope.login = function(credentials) {
@@ -10,6 +10,6 @@ define(['user/module'], function (module) {
         $location.path('/dashboard');
       });
     };
-  });
+  }]);
 
 });
