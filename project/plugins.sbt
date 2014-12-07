@@ -22,4 +22,4 @@ addSbtPlugin("net.ground5hark.sbt" % "sbt-concat" % "0.1.8")
 addSbtPlugin("net.ground5hark.sbt" % "sbt-css-compress" % "0.1.3")
 
 // This plugin automatically refreshes Chrome when you make changes to your app
-//addSbtPlugin("com.jamesward" %% "play-auto-refresh" % "0.0.11")
+addSbtPlugin("com.jamesward" %% "play-auto-refresh" % "0.0.11")

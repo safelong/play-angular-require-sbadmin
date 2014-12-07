@@ -5,7 +5,19 @@
   // -- RequireJS config --
   requirejs.config({
     // Packages = top-level folders; loads a contained file named 'main.js"
-    packages: ['common', 'home', 'user', 'dashboard', 'forms'],
+    //packages: ['common', 'home', 'user', 'dashboard', 'forms'],
+    paths: {
+      'requirejs': ['../lib/requirejs/require'],
+      'jquery': ['../lib/jquery/jquery'],
+      'angular': ['../lib/angularjs/angular'],
+      'angular-route': ['../lib/angularjs/angular-route'],
+      'angular-cookies': ['../lib/angularjs/angular-cookies'],
+      'angular-bootstrap': '../lib/angular-ui/angular-ui.min',
+      'angular-ui-router': '../lib/angular-ui-router/angular-ui-router.min',
+      'angular-couch-potato': 'plugin/angular-couch-potato/angular-couch-potato',
+      'bootstrap': ['../lib/bootstrap/js/bootstrap'],
+      'jsRoutes': ['/jsroutes']
+    },
     shim: {
       'jsRoutes': {
         deps: [],
@@ -19,18 +31,16 @@
       },
       'angular-route': ['angular'],
       'angular-cookies': ['angular'],
+      'angular-bootstrap': ['angular'],
+      'angular-ui-router': [ "angular" ],
+      'angular-couch-potato': ['angular'],
       'bootstrap': ['jquery']
     },
-    paths: {
-      'requirejs': ['../lib/requirejs/require'],
-      'jquery': ['../lib/jquery/jquery'],
-      'angular': ['../lib/angularjs/angular'],
-      'angular-route': ['../lib/angularjs/angular-route'],
-      'angular-cookies': ['../lib/angularjs/angular-cookies'],
-      //'angular-ui-router': '../lib/angular-ui-router/release/angular-ui-router.min',
-      'bootstrap': ['../lib/bootstrap/js/bootstrap'],
-      'jsRoutes': ['/jsroutes']
-    }
+    priority: [
+      'jquery',
+      'bootstrap',
+      'angular'
+    ]
   });
 
   requirejs.onError = function (err) {
@@ -44,8 +54,8 @@
     'angular-route', 
     'jquery', 
     'bootstrap', 
-    './app'
-    ,'./includes'
+    './app',
+    './includes'
   ], function (angular) {
       angular.bootstrap(document, ['app']);
     }

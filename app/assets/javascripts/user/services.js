@@ -1,11 +1,20 @@
 /**
  * User service, exposes user model to the rest of the app.
  */
-define(['angular', 'common'], function (angular) {
-  'use strict';
+// define([
+//   'angular',
+//   'common'
+// ], function (angular) {
+//   'use strict';
 
-  var mod = angular.module('user.services', ['yourprefix.common', 'ngCookies']);
-  mod.factory('userService', ['$http', '$q', 'playRoutes', '$cookies', '$log', function ($http, $q, playRoutes, $cookies, $log) {
+//   var mod = angular.module('user.services', [
+//     'yourprefix.common',
+//     'ngCookies'
+//   ]);
+define(['user/module'], function (module) {
+  'use strict';
+  
+  module.factory('userService', ['$http', '$q', 'playRoutes', '$cookies', '$log', function ($http, $q, playRoutes, $cookies, $log) {
     var user, token = $cookies['XSRF-TOKEN'];
 
     /* If the token is assigned, check that the token is still valid on the server */
@@ -49,11 +58,12 @@ define(['angular', 'common'], function (angular) {
       }
     };
   }]);
+
   /**
    * Add this object to a route definition to only allow resolving the route if the user is
    * logged in. This also adds the contents of the objects as a dependency of the controller.
    */
-  mod.constant('userResolve', {
+  module.constant('userResolve', {
     user: ['$q', 'userService', function ($q, userService) {
       var deferred = $q.defer();
       var user = userService.getUser();
@@ -65,6 +75,7 @@ define(['angular', 'common'], function (angular) {
       return deferred.promise;
     }]
   });
+
   /**
    * If the current route does not resolve, go back to the start page.
    */
@@ -74,6 +85,7 @@ define(['angular', 'common'], function (angular) {
     });
   };
   handleRouteError.$inject = ['$rootScope', '$location'];
-  mod.run(handleRouteError);
-  return mod;
+  module.run(handleRouteError);
+
+  return module;
 });
