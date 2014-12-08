@@ -1,56 +1,38 @@
-@()<!DOCTYPE html>
-<html>
+@()
+
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>SB Admin v2</title>
-    <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 with AngularJS and RequireJS Seed</title>
+
     <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("lib/bootstrap/css/bootstrap.css")" />
-    @*-- Add More CSS here -- *@
-    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
     <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("lib/font-awesome/css/font-awesome.css")">
-    <script data-main="@routes.Assets.versioned("javascripts/main.js")" type="text/javascript" src="@routes.Assets.versioned("lib/requirejs/require.js")"></script>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/sb-admin-2.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/plugins/metisMenu/metisMenu.min.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/plugins/timeline.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/plugins/morris.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/main.css")">
+
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script data-main="@routes.Assets.versioned("js/main.js")" type="text/javascript" src="@routes.Assets.versioned("lib/requirejs/require.js")"></script>
   </head>
-  <body data-ng-app>
-    <div data-ui-view="root"  data-autoscroll="false"></div>
-    <!--
-    <header class="navbar navbar-inverse navbar-fixed-top basics-nav" data-ng-controller="HeaderCtrl"
-        data-ng-cloak>
-      <div class="container" data-ng-switch="!!user" data-ng-cloak>
-        <a href="#/" class="navbar-brand">Play-Angular Seed</a>
-        <div data-ng-switch-when="true">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="" class="dropdown-toggle" data-toggle="dropdown">
-                <span class="glyphicon glyphicon-user"></span> {{user.name}}
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="#/settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
-                <li>
-                  <a href="" data-ng-click="logout()">
-                    <span class="glyphicon glyphicon-off"></span> Logout
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div data-ng-switch-when="false">
-          <ul class="nav navbar-nav pull-right">
-            <li><a href="#/login">Login hoegehoe</a></li>
-          </ul>
-        </div>
-        <div data-ng-switch-when="false">
-          <ul class="nav navbar-nav pull-right">
-            <li><a href="/sbadmin2">SB Admin v2</a></li>
-          </ul>
-        </div>
-      </div>
-    </header>
-    <div class="container" data-ng-cloak>
-      <div data-ng-view></div>
-    </div>
-    <footer data-ng-controller="FooterCtrl">
-    </footer>
-    -->
+  <body>
+
+    <div data-ui-view="root"></div>
+
   </body>
 </html>

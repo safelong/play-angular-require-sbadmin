@@ -18,7 +18,7 @@ define([
         views: {
           "content@app": {
             controller: 'DashboardCtrl',
-            templateUrl: '/assets/javascripts/dashboard/dashboard.html',
+            templateUrl: '/assets/js/dashboard/dashboard.html',
             resolve: {
               deps: $couchPotatoProvider.resolveDependencies([
                 'dashboard/DashboardCtrl'

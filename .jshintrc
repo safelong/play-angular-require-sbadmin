@@ -4,7 +4,7 @@
   "eqeqeq": true,
   "strict": true,
   "undef": true,
-  "unused": true,
+  "unused": false,
   "browser": true,
   "laxcomma": true,
   "predef": {

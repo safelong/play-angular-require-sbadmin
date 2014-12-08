@@ -2,12 +2,14 @@ define([
   'angular',
   'angular-couch-potato',
   'angular-ui-router'
-], function (ng, couchPotato) {
+], function (angular, couchPotato) {
   'use strict';
 
-  var module = ng.module('app.home', [
+  var module = angular.module('app.home', [
     'ui.router'
   ]);
+
+  couchPotato.configureApp(module);
 
   module.config(['$stateProvider', '$couchPotatoProvider', '$urlRouterProvider', 
     function($stateProvider, $couchPotatoProvider, $urlRouterProvider) {
@@ -17,23 +19,28 @@ define([
         abstract: true,
         views: {
           root: {
-            controller: 'HomeCtrl',
-            templateUrl: '/assets/javascripts/home/layout.tpl.html',
+            controller: 'FooterCtrl',
+            templateUrl: '/assets/js/home/layout.tpl.html',
             resolve: {
               deps: $couchPotatoProvider.resolveDependencies([
-                'home/FooterCtrl',
-                'home/HeaderCtrl',
-                'home/HomeCtrl'
+                // 'home/HomeCtrl',
+                // 'home/HeaderCtrl',
+                'home/FooterCtrl'
               ])
             }
+          }
+        }
+      })
+      .state('notfound', {
+        views: {
+          root: {
+            templateUrl: '/assets/js/home/notFound.html'
           }
         }
       });
     $urlRouterProvider.otherwise('/dashboard');
 
   }]);
-
-  couchPotato.configureApp(module);
 
   module.run(function ($couchPotato) {
       module.lazy = $couchPotato;

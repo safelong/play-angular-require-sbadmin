@@ -1,5 +1,5 @@
 define([
-	'common/module',
+	//'common/module',
 	'dashboard/module',
 	'home/module'
 	//,'user/module'

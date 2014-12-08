@@ -7,16 +7,28 @@
     // Packages = top-level folders; loads a contained file named 'main.js"
     //packages: ['common', 'home', 'user', 'dashboard', 'forms'],
     paths: {
-      'requirejs': ['../lib/requirejs/require'],
-      'jquery': ['../lib/jquery/jquery'],
-      'angular': ['../lib/angularjs/angular'],
-      'angular-route': ['../lib/angularjs/angular-route'],
-      'angular-cookies': ['../lib/angularjs/angular-cookies'],
+      'requirejs': '../lib/requirejs/require',
+      'jquery': '../lib/jquery/jquery',
+      'angular': '../lib/angularjs/angular',
+      'angular-route': '../lib/angularjs/angular-route',
+      'angular-cookies': '../lib/angularjs/angular-cookies',
       'angular-bootstrap': '../lib/angular-ui-bootstrap/ui-bootstrap-tpls.min',
       'angular-ui-router': '../lib/angular-ui-router/angular-ui-router.min',
-      'angular-couch-potato': 'plugin/angular-couch-potato/angular-couch-potato',
-      'bootstrap': ['../lib/bootstrap/js/bootstrap'],
-      'jsRoutes': ['/jsroutes']
+      'angular-couch-potato': 'plugins/angular-couch-potato/angular-couch-potato',
+      'bootstrap': '../lib/bootstrap/js/bootstrap',
+      'jsRoutes': '/jsroutes',
+
+      'sb-admin-2': 'sb-admin-2',
+
+      'datatables': 'plugins/dataTables/jquery.dataTables',
+      'datatables-bootstrap': 'plugins/dataTables/dataTables.bootstrap',
+      'flot': 'plugins/flot/jquery.flot',
+      'flot-resize': 'plugins/flot/jquery.flot.resize',
+      'flot-pie': 'plugins/flot/jquery.flot.pie',
+      'flot-tooltip': 'plugins/flot/jquery.flot.tooltip',
+      'metis-menu': 'plugins/metisMenu/metisMenu',
+      'morris': 'plugins/morris'
+
     },
     shim: {
       'jsRoutes': {
@@ -34,7 +46,14 @@
       'angular-bootstrap': ['angular'],
       'angular-ui-router': [ "angular" ],
       'angular-couch-potato': ['angular'],
-      'bootstrap': ['jquery']
+      'bootstrap': ['jquery'],
+
+      'datatables':{deps: ['jquery']},
+      'datatables-bootstrap':{deps: ['datatables']},
+      'flot': { deps: ['jquery']},
+      'flot-resize': { deps: ['flot']},
+      'flot-pie': { deps: ['flot']},
+      'flot-tooltip': { deps: ['flot']},
     },
     priority: [
       'jquery',
@@ -53,6 +72,7 @@
     'angular-cookies',
     'jquery', 
     'bootstrap', 
+    
     'app',
     'includes'
   ], function (angular) {

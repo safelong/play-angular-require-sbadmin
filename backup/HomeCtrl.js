@@ -1,4 +1,7 @@
-define(['home/module'], function (module) {
+define([
+  'home/module',
+  'common/services/helper'
+], function (module, helper) {
 
   'use strict';
 

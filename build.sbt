@@ -71,7 +71,7 @@ excludeFilter in cssCompress := GlobFilter("lib/*.css")
 
 // Exlude third-party plugins in app/assets/javascripts/plugin from jshint targets
 excludeFilter in (Assets, JshintKeys.jshint) := new FileFilter{
-  def accept(f: File) = ".*/plugin/.*".r.pattern.matcher(f.getAbsolutePath).matches
+  def accept(f: File) = ".*/plugins/.*".r.pattern.matcher(f.getAbsolutePath).matches
 }
 
 //RjsKeys.mainModule := "main"

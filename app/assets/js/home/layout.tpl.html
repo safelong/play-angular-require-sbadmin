@@ -1,0 +1,33 @@
+<!-- HEADER -->
+<div data-ng-include="'assets/js/home/header.tpl.html'" class="placeholder-header"></div>
+<!-- END HEADER -->
+
+
+<!-- Left panel : Navigation area -->
+<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+<div data-ng-include="'assets/js/home/navigation.tpl.html'" class="placeholder-left-panel"></div>
+<!-- END NAVIGATION -->
+
+<!-- MAIN PANEL -->
+<div id="main" role="main">
+
+  <!-- RIBBON -->
+  <div id="ribbon">
+    <!-- breadcrumb -->
+    <!-- <state-breadcrumbs></state-breadcrumbs> -->
+    <!-- end breadcrumb -->
+  </div>
+  <!-- END RIBBON -->
+
+  <div data-wrap-for="#content">
+    <div data-ui-view="content"></div>
+  </div>
+
+</div>
+<!-- END MAIN PANEL -->
+
+<!-- PAGE FOOTER -->
+<div data-ng-include="'assets/js/home/footer.tpl.html'"></div>
+<!-- END PAGE FOOTER -->
+
+
