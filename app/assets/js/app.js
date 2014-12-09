@@ -9,7 +9,8 @@ define([
   'angular',
   'angular-couch-potato',
   'angular-ui-router',
-  'angular-bootstrap'
+  'angular-bootstrap'  
+  //,'sb-admin-2'
 ], function(angular, couchPotato) {
   'use strict';
 

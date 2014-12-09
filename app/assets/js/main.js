@@ -48,6 +48,7 @@
       'angular-couch-potato': ['angular'],
       'bootstrap': ['jquery'],
 
+      'sb-admin-2': ['jquery'],
       'datatables': ['jquery'],
       'datatables-bootstrap': ['datatables'],
       'flot': ['jquery'],
