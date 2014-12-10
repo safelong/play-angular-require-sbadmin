@@ -11,10 +11,9 @@ define([
   'angular-ui-router',
   'angular-bootstrap'
 
-  //,'sb-admin-2'
-  ,'./plugins/sb-admin-2'
 
   ,'./config'
+  ,'sb-admin-2'
   //,'./modules/docs/module'
   //,'./modules/html/module'
   //,'./modules/ui/module'
