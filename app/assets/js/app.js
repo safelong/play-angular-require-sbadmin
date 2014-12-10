@@ -9,8 +9,15 @@ define([
   'angular',
   'angular-couch-potato',
   'angular-ui-router',
-  'angular-bootstrap'  
+  'angular-bootstrap'
+
   //,'sb-admin-2'
+  ,'./plugins/sb-admin-2'
+
+  ,'./config'
+  //,'./modules/docs/module'
+  //,'./modules/html/module'
+  //,'./modules/ui/module'
 ], function(angular, couchPotato) {
   'use strict';
 
@@ -25,6 +32,12 @@ define([
     'app.dashboard',
     'app.home'
     //,'app.user'
+
+    //https://github.com/StarterSquad/ngseed
+    ,'app.constants'
+    //,'app.docs'
+    //,'app.html'
+    //,'app.ui'
   ]);
 
   couchPotato.configureApp(app);

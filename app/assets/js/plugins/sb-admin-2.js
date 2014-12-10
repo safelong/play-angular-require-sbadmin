@@ -38,3 +38,26 @@
   });
   
 }))
+
+
+var app=angular.module('App', []);
+app.directive('resize', ['$window', function($window) {
+  return {
+    link: function(scope, elem, attrs) {
+
+      
+      
+      scope.onResize = function() {
+        var header = document.getElementsByTagName('header')[0];
+        elem.windowHeight = $window.innerHeight - header.clientHeight;
+        $(elem).height(elem.windowHeight);
+      }
+      scope.onResize();
+
+      angular.element($window).bind('load resize', function() {
+        scope.onResize();
+        scope.apply();
+      })
+    }
+  }
+}])
