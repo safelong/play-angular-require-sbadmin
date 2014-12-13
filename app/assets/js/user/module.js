@@ -2,28 +2,31 @@ define([
   'angular',
   'angular-couch-potato',
   'angular-ui-router'
-  ,'./services'
+  //,'./services'
   //,'common/module'
 ], function (angular, couchPotato) {
   'use strict';
 
   var module = angular.module('app.user', [
     'ui.router'
-    ,'user.services'
+    //,'user.services'
     //,'app.common'
   ]);
+
+  couchPotato.configureApp(module);
 
   module.config(['$stateProvider', '$couchPotatoProvider', function($stateProvider, $couchPotatoProvider) {
     $stateProvider
       .state('app.login', {
         url: '/login',
         views: {
-          "content@app": {
+          root: {
             controller: 'LoginCtrl',
-            templateUrl: '/assets/javascripts/user/login.html',
+            templateUrl: '/assets/js/user/login.html',
             resolve: {
               deps: $couchPotatoProvider.resolveDependencies([
-                'user/LoginCtrl'
+                'user/LoginCtrl',
+                'user/services'
               ])
             }
           }
@@ -33,8 +36,6 @@ define([
         }
       });
   }]);
-
-  couchPotato.configureApp(module);
 
   module.run(['$couchPotato', function ($couchPotato) {
     module.lazy = $couchPotato;

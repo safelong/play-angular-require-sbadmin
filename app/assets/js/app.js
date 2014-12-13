@@ -9,20 +9,9 @@ define([
   'angular',
   'angular-couch-potato',
   'angular-ui-router',
-  'angular-bootstrap'
-
-  ,'./config'
-  ,'./common/module'
-  ,'./user/module'
-
-  ,'./dashboard/module'
-  ,'./home/module'
-
-  ,'./modules/charts/module'
-  ,'./modules/forms/module'
-  ,'./modules/tables/module'
-  ,'./modules/ui/module'
-
+  'angular-bootstrap',
+  'angular-sanitize',
+  'angular-breadcrumb'
 ], function(angular, couchPotato, $) {
   'use strict';
 
@@ -31,10 +20,9 @@ define([
   var app = angular.module('app', [
     'scs.couch-potato',
     'ui.router',
-    'ui.bootstrap'
-
-    //,'ngAnimate'
-    //,'anim-in-out'
+    'ui.bootstrap',
+    'ngSanitize',
+    'ncy-angular-breadcrumb'
 
     ,'app.constants'
     ,'app.common'
@@ -47,14 +35,9 @@ define([
     ,'app.forms'
     ,'app.tables'
     ,'app.ui'
-
-
-    //'app.common',
-    //,'app.user'
-    //https://github.com/StarterSquad/ngseed
-
   ]);
 
+  // setup the registerXXX functions (registerController, registerDirective, ...)
   couchPotato.configureApp(app);
 
   app.config(['$provide', '$httpProvider', function ($provide, $httpProvider) {
@@ -148,7 +131,15 @@ define([
   //
   //}]);
 
+  app.config(function($breadcrumbProvider) {
+    $breadcrumbProvider.setOptions({
+      prefixStateName: 'app'
+      ,templateUrl: 'assets/js/home/breadcrumb.tpl.html'
+    });
+  });
+
   app.run(['$couchPotato', '$rootScope', '$state', '$stateParams', function ($couchPotato, $rootScope, $state, $stateParams) {
+    // assign app.lazy so the registerXXX functions work
     app.lazy = $couchPotato;
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;

@@ -1,20 +1,27 @@
 /** Common filters. */
-define(['angular'], function(angular) {
+define(['angular', 'angular-couch-potato'], function(angular, couchPotato) {
   'use strict';
 
-  var mod = angular.module('common.filters', []);
+  var module = angular.module('common.filters', []);
   /**
    * Extracts a given property from the value it is applied to.
    * {{{
    * (user | property:'name')
    * }}}
    */
-  mod.filter('property', ['value', 'property', function(value, property) {
+  module.filter('property', ['value', 'property', function(value, property) {
     if (angular.isObject(value)) {
       if (value.hasOwnProperty(property)) {
         return value[property];
       }
     }
   }]);
-  return mod;
+
+  couchPotato.configureApp(module);
+
+  module.run(['$couchPotato', function ($couchPotato) {
+    module.lazy = $couchPotato;
+  }]);
+
+  return module;
 });

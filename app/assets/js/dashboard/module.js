@@ -2,7 +2,6 @@ define([
   'angular',
   'angular-couch-potato',
   'angular-ui-router'
-  //,'common/module'
   ,'user/services'
 ], function (angular, couchPotato) {
 
@@ -10,9 +9,10 @@ define([
 
   var module = angular.module('app.dashboard', [
     'ui.router'
-    //,'app.common'
     ,'user.services'
   ]);
+
+  couchPotato.configureApp(module);
 
   module.config(['$stateProvider', '$couchPotatoProvider', 'userResolve', function($stateProvider, $couchPotatoProvider, userResolve) {
     $stateProvider
@@ -26,17 +26,17 @@ define([
               deps: $couchPotatoProvider.resolveDependencies([
                 'dashboard/DashboardCtrl'
               ])
+              ,user: ['userResolve', function(userResolve) {
+                return userResolve;
+              }]
             }
-            ,user: userResolve
           }
         },
-        data:{
-          title: 'Dashboard'
+        ncyBreadcrumb: {
+          label: '<span class="fa fa-home"></span>'
         }
       });
   }]);
-
-  couchPotato.configureApp(module);
 
   module.run(['$couchPotato', function ($couchPotato) {
     module.lazy = $couchPotato;

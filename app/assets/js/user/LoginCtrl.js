@@ -7,7 +7,7 @@ define(['user/module'], function (module) {
 
     $scope.login = function(credentials) {
       userService.loginUser(credentials).then(function(/*user*/) {
-        $location.path('/dashboard');
+        $location.path('/');
       });
     };
   }]);

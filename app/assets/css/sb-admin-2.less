@@ -21,7 +21,6 @@ body {
 }
 
 #page-wrapper {
-    padding: 0 15px;
     min-height: 568px;
     background-color: white;
     margin-top: 51px;
@@ -31,7 +30,6 @@ body {
     #page-wrapper {
         position: inherit;
         margin: 51px 0 0 250px;
-        padding: 0 30px;
         border-left: 1px solid darken(@gray-lightest, 6.5%);
     }
 }
@@ -47,6 +45,22 @@ body {
 }
 
 #content {
+    padding: 0 15px;
+}
+
+@media(min-width:768px) {
+    #content {
+        padding: 0 30px;
+    }
+}
+
+.breadcrumb {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.page-header {
+    margin: 20px 0 10px;
 }
 
 // Navigation

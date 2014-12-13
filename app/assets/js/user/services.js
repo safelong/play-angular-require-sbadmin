@@ -3,16 +3,20 @@
  */
 define([
   'angular',
-  'common/module'
-], function (angular) {
+  'angular-couch-potato',
+  'common/module',
+  'user/module'
+], function (angular, couchPotato) {
   'use strict';
 
   var module = angular.module('user.services', [
     'ngCookies',
     'app.common'
   ]);
+
+  couchPotato.configureApp(module);
   
-  module.factory('userService', ['$http', '$q', 'playRoutes', '$cookies', '$log', function ($http, $q, playRoutes, $cookies, $log) {
+  module.registerFactory('userService', ['$http', '$q', 'playRoutes', '$cookies', '$log', function ($http, $q, playRoutes, $cookies, $log) {
     var user, token = $cookies['XSRF-TOKEN'];
 
     /* If the token is assigned, check that the token is still valid on the server */
@@ -77,13 +81,15 @@ define([
   /**
    * If the current route does not resolve, go back to the start page.
    */
-  var handleRouteError = function ($rootScope, $location) {
+  module.run(['$rootScope', '$location', function ($rootScope, $location) {
     $rootScope.$on('$routeChangeError', function (/*e, next, current*/) {
       $location.path('/');
     });
-  };
-  handleRouteError.$inject = ['$rootScope', '$location'];
-  module.run(handleRouteError);
+  }]);
+
+  module.run(['$couchPotato', function ($couchPotato) {
+    module.lazy = $couchPotato;
+  }]);
 
   return module;
 });

@@ -21,6 +21,10 @@ define([
           "content@app": {
             templateUrl: '/assets/js/modules/forms/forms.html'
           }
+        },
+        ncyBreadcrumb: {
+          label: 'Forms',
+          parent: 'app.dashboard'
         }
       });
 

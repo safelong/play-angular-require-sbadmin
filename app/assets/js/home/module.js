@@ -29,6 +29,9 @@ define([
               ])
             }
           }
+        },
+        ncyBreadcrumb: {
+          label: 'Home'
         }
       })
       .state('app.notfound', {
@@ -37,6 +40,9 @@ define([
           "content@app": {
             templateUrl: '/assets/js/home/notFound.html'
           }
+        },
+        ncyBreadcrumb: {
+          label: 'Not Found'
         }
       });
 

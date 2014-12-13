@@ -21,6 +21,10 @@ define([
           "content@app": {
             templateUrl: '/assets/js/modules/tables/tables.html'
           }
+        },
+        ncyBreadcrumb: {
+          label: 'Tables',
+          parent: 'app.dashboard'
         }
       });
 

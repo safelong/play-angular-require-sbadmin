@@ -14,30 +14,42 @@ define([
     $stateProvider
       .state('app.charts', {
         abstract: true,
-        data: {
-          title: 'Charts'
+        ncyBreadcrumb: {
+          label: 'Charts'
         }
       })
       .state('app.charts.flot', {
         url: '/charts/flot',
-        data: {
-          title: 'Flot Charts'
-        },
         views: {
           "content@app": {
-            templateUrl: '/assets/js/modules/charts/flot.html'
+            templateUrl: '/assets/js/modules/charts/flot.html',
+            resolve: {
+              deps: $couchPotatoProvider.resolveDependencies([
+                'modules/charts/FlotCtrl'
+              ])
+            }
           }
+        },
+        ncyBreadcrumb: {
+          label: 'Flot Charts',
+          parent: 'app.dashboard'
         }
       })
       .state('app.charts.morris', {
         url: '/charts/morris',
-        data: {
-          title: 'Morris Charts'
-        },
         views: {
           "content@app": {
-            templateUrl: '/assets/js/modules/charts/morris.html'
+            templateUrl: '/assets/js/modules/charts/morris.html',
+            resolve: {
+              deps: $couchPotatoProvider.resolveDependencies([
+                'modules/charts/MorrisCtrl'
+              ])
+            }
           }
+        },
+        ncyBreadcrumb: {
+          label: 'Morris Charts',
+          parent: 'app.dashboard'
         }
       });
 

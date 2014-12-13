@@ -3,11 +3,14 @@
  * It would also be ok to put all directives into one file, or to define one RequireJS module
  * that references them all.
  */
-define(['angular'], function(angular) {
+define(['angular', 'angular-couch-potato'], function(angular, couchPotato) {
   'use strict';
 
-  var mod = angular.module('common.directives.example', []);
-  mod.directive('example', ['$log', function($log) {
+  var module = angular.module('common.directives.example', []);
+
+  couchPotato.configureApp(module);
+
+  module.registerDirective('example', ['$log', function($log) {
     return {
       restrict: 'AE',
       link: function(/*scope, el, attrs*/) {
@@ -15,5 +18,10 @@ define(['angular'], function(angular) {
       }
     };
   }]);
-  return mod;
+
+  module.run(['$couchPotato', function ($couchPotato) {
+    module.lazy = $couchPotato;
+  }]);
+
+  return module;
 });

@@ -1,8 +1,4 @@
-define([
-  'home/module'
-  //'common/services/helper'
-  //,'user/services'
-], function (module) {
+define(['home/module'], function (module) {
   'use strict';
 
   return module.registerController('HeaderCtrl', ['$scope', 'userService', '$location', function ($scope, userService, $location) {

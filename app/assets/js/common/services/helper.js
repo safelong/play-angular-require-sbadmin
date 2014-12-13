@@ -1,14 +1,22 @@
 /** Common helpers */
-define(['angular'], function(angular) {
+define(['angular', 'angular-couch-potato'], function(angular, couchPotato) {
   'use strict';
 
-  var mod = angular.module('common.helper', []);
-  mod.service('helper', function() {
+  var module = angular.module('common.helper', []);
+
+  couchPotato.configureApp(module);
+
+  module.registerService('helper', function() {
     return {
       sayHi: function() {
         return 'hi';
       }
     };
   });
-  return mod;
+
+  module.run(['$couchPotato', function ($couchPotato) {
+    module.lazy = $couchPotato;
+  }]);
+
+  return module;
 });

@@ -1,8 +1,23 @@
 define([
-	//'common/module',
-	//'dashboard/module',
-	//'home/module'
-	//,'user/module'
+	'config'
+
+	,'common/module'
+	,'common/directives/example'
+	,'common/services/helper'
+	,'common/services/playRoutes'
+	,'common/filters'
+
+	,'user/module'
+	,'user/services'
+
+	,'dashboard/module'
+	,'home/module'
+
+	,'modules/charts/module'
+	,'modules/forms/module'
+	,'modules/tables/module'
+	,'modules/ui/module'
+
 ], function () {
     'use strict';
 });

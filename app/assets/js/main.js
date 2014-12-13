@@ -15,7 +15,10 @@
       'angular-bootstrap': '../lib/angular-ui-bootstrap/ui-bootstrap-tpls.min',
       'angular-ui-router': '../lib/angular-ui-router/angular-ui-router.min',
       'angular-couch-potato': '../plugins/angular-couch-potato/angular-couch-potato',
-      'angular-ui-anim-in-out': '../plugins/angular-ui-anim-in-out/anim-in-out',
+      'angular-sanitize': [
+        '//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.min'
+        //,'../plugin/angular-sanitize/angular-sanitize.min'
+      ],
       'bootstrap': '../lib/bootstrap/js/bootstrap',
       'jsRoutes': '/jsroutes',
 
@@ -24,10 +27,11 @@
       'flot': '../plugins/flot/jquery.flot',
       'flot-resize': '../plugins/flot/jquery.flot.resize',
       'flot-pie': '../plugins/flot/jquery.flot.pie',
-      'flot-tooltip': '../plugins/flot/jquery.flot.tooltip',
+      'flot-tooltip': '../plugins/flot/jquery.flot.tooltip.min',
       'metis-menu': '../plugins/metisMenu/metisMenu.min',
       'raphael': '../plugins/morris/raphael.min',
-      'morris': '../plugins/morris/morris.min'
+      'morris': '../plugins/morris/morris.min',
+      'angular-breadcrumb': '../plugins/angular-breadcrumb/angular-breadcrumb.min'
 
     },
     shim: {
@@ -43,7 +47,7 @@
       'angular-bootstrap': ['angular'],
       'angular-ui-router': [ "angular" ],
       'angular-couch-potato': ['angular'],
-      'angular-ui-anim-in-out': ['angular'],
+      'angular-sanitize': ['angular'],
       'bootstrap': ['jquery'],
 
       'datatables': ['jquery'],
@@ -53,7 +57,8 @@
       'flot-pie': ['flot'],
       'flot-tooltip': ['flot'],
       'metis-menu': ['jquery'],
-      'morris': ['raphael'] 
+      'morris': ['raphael'],
+      'angular-breadcrumb': ['angular']
     },
     priority: [
       'jquery',

@@ -14,63 +14,68 @@ define([
     $stateProvider
       .state('app.ui', {
         abstract: true,
-        data: {
-          title: 'UI Elements'
+        ncyBreadcrumb: {
+          label: 'UI Elements'
         }
       })
       .state('app.ui.grid', {
         url: '/ui/grid',
-        data: {
-          title: 'Grid'
-        },
         views: {
           "content@app": {
             templateUrl: '/assets/js/modules/ui/grid.html'
           }
+        },
+        ncyBreadcrumb: {
+          label: 'UI Elements',
+          parent: 'app.dashboard'
         }
       })
       .state('app.ui.buttons', {
         url: '/ui/buttons',
-        data: {
-          title: 'Buttons'
-        },
         views: {
           "content@app": {
             templateUrl: '/assets/js/modules/ui/buttons.html'
           }
+        },
+        ncyBreadcrumb: {
+          label: 'Buttons',
+          parent: 'app.dashboard'
         }
       })
       .state('app.ui.typography', {
         url: '/ui/typography',
-        data: {
-          title: 'Typography'
-        },
         views: {
           "content@app": {
             templateUrl: '/assets/js/modules/ui/typography.html'
           }
+        },
+        ncyBreadcrumb: {
+          label: 'Typography',
+          parent: 'app.dashboard'
         }
       })
       .state('app.ui.panels-wells', {
         url: '/ui/panelswells',
-        data: {
-          title: 'Panels and Wells'
-        },
         views: {
           "content@app": {
             templateUrl: '/assets/js/modules/ui/panels-wells.html'
           }
+        },
+        ncyBreadcrumb: {
+          label: 'Panels and Wells',
+          parent: 'app.dashboard'
         }
       })
       .state('app.ui.notifications', {
         url: '/ui/notifications',
-        data: {
-          title: 'Notifications'
-        },
         views: {
           "content@app": {
             templateUrl: '/assets/js/modules/ui/notifications.html'
           }
+        },
+        ncyBreadcrumb: {
+          label: 'Notifications',
+          parent: 'app.dashboard'
         }
       });
   }]);
