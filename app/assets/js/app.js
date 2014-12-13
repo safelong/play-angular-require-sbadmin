@@ -12,10 +12,13 @@ define([
   'angular-bootstrap'
 
   ,'./config'
+  ,'./modules/forms/module'
+  ,'./modules/tables/module'
+  ,'./modules/ui/module'
   //,'./modules/docs/module'
   //,'./modules/html/module'
   //,'./modules/ui/module'
-], function(angular, couchPotato) {
+], function(angular, couchPotato, $) {
   'use strict';
 
   // We must already declare most dependencies here (except for common), or the submodules' routes
@@ -28,6 +31,11 @@ define([
     ,'app.constants'
     ,'app.dashboard'
     ,'app.home'
+    ,'app.forms'
+    ,'app.tables'
+    ,'app.ui'
+
+
     //'app.common',
     //,'app.user'
     //https://github.com/StarterSquad/ngseed
@@ -42,27 +50,27 @@ define([
 
     // Intercept http calls.
     $provide.factory('ErrorHttpInterceptor', function ($q) {
-      // var errorCounter = 0;
+      var errorCounter = 0;
       function notifyError(rejection){
-          console.log(rejection);
-          // $.bigBox({
-          //     title: rejection.status + ' ' + rejection.statusText,
-          //     content: rejection.data,
-          //     color: "#C46A69",
-          //     icon: "fa fa-warning shake animated",
-          //     number: ++errorCounter,
-          //     timeout: 6000
-          // });
+        console.log(rejection);
+        $.bigBox({
+           title: rejection.status + ' ' + rejection.statusText,
+           content: rejection.data,
+           color: "#C46A69",
+           icon: "fa fa-warning shake animated",
+           number: ++errorCounter,
+           timeout: 6000
+        });
       }
 
       return {
         // On request failure
         requestError: function (rejection) {
-            // show notification
-            notifyError(rejection);
+          // show notification
+          notifyError(rejection);
 
-            // Return the promise rejection.
-            return $q.reject(rejection);
+          // Return the promise rejection.
+          return $q.reject(rejection);
         },
 
         // On response failure
@@ -80,26 +88,26 @@ define([
 
   });
 
-  app.config(function($provide) {
-
-    // with this, you can use $log('Message') same as $log.info('Message');
-    $provide.decorator('$log', ['$delegate', function($delegate) {
-      // create a new function to be returned below as the $log service (instead of the $delegate)
-      function logger() {
-        // if $log fn is called directly, default to "info" message
-        logger.info.apply(logger, arguments);
-      }
-      // add all the $log props into our new logger fn
-      angular.extend(logger, $delegate);
-      return logger;
-    }]);
-
-  });
+  //app.config(function($provide) {
+  //
+  //  // with this, you can use $log('Message') same as $log.info('Message');
+  //  $provide.decorator('$log', ['$delegate', function($delegate) {
+  //    // create a new function to be returned below as the $log service (instead of the $delegate)
+  //    function logger() {
+  //      // if $log fn is called directly, default to "info" message
+  //      logger.info.apply(logger, arguments);
+  //    }
+  //    // add all the $log props into our new logger fn
+  //    angular.extend(logger, $delegate);
+  //    return logger;
+  //  }]);
+  //
+  //});
 
   // For debugging angular-ui-router
   // http://stackoverflow.com/questions/20745761/what-is-the-angular-ui-router-lifecycle-for-debugging-silent-errors
-  // app.run(['$rootScope', function($rootScope) {
-
+  //app.run(['$rootScope', function($rootScope) {
+  //
   //   $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
   //     console.log('$stateChangeStart to '+toState.to+'- fired when the transition begins. toState,toParams : \n',toState, toParams);
   //   });
@@ -121,8 +129,8 @@ define([
   //     console.log('$stateNotFound '+unfoundState.to+'  - fired when a state cannot be found by its name.');
   //     console.log(unfoundState, fromState, fromParams);
   //   });
-
-  // }]);
+  //
+  //}]);
 
   app.run(function ($couchPotato, $rootScope, $state, $stateParams) {
     app.lazy = $couchPotato;
