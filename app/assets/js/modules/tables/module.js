@@ -1,35 +1,35 @@
 define([
-    'angular',
-    'angular-couch-potato',
-    'angular-ui-router'
+  'angular',
+  'angular-couch-potato',
+  'angular-ui-router'
 ], function (angular, couchPotato) {
-    "use strict";
+  "use strict";
 
-    var module = angular.module('app.tables', ['ui.router']);
+  var module = angular.module('app.tables', ['ui.router']);
 
-    couchPotato.configureApp(module);
+  couchPotato.configureApp(module);
 
-    module.config(function ($stateProvider, $couchPotatoProvider) {
+  module.config(function ($stateProvider, $couchPotatoProvider) {
 
-        $stateProvider
-            .state('app.tables', {
-                url: '/tables',
-                data: {
-                    title: 'Tables'
-                },
-                views: {
-                    "content@app": {
-                        templateUrl: '/assets/js/modules/tables/tables.html'
-                    }
-                }
-            });
+    $stateProvider
+      .state('app.tables', {
+        url: '/tables',
+        data: {
+          title: 'Tables'
+        },
+        views: {
+          "content@app": {
+            templateUrl: '/assets/js/modules/tables/tables.html'
+          }
+        }
+      });
 
-    });
+  });
 
-    module.run(function ($couchPotato) {
-        module.lazy = $couchPotato;
-    });
+  module.run(function ($couchPotato) {
+    module.lazy = $couchPotato;
+  });
 
-    return module;
+  return module;
 
 });

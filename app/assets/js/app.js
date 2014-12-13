@@ -12,12 +12,13 @@ define([
   'angular-bootstrap'
 
   ,'./config'
+  ,'./dashboard/module'
+  ,'./home/module'
+  ,'./modules/charts/module'
   ,'./modules/forms/module'
   ,'./modules/tables/module'
   ,'./modules/ui/module'
-  //,'./modules/docs/module'
-  //,'./modules/html/module'
-  //,'./modules/ui/module'
+
 ], function(angular, couchPotato, $) {
   'use strict';
 
@@ -31,6 +32,8 @@ define([
     ,'app.constants'
     ,'app.dashboard'
     ,'app.home'
+
+    ,'app.charts'
     ,'app.forms'
     ,'app.tables'
     ,'app.ui'
@@ -39,9 +42,7 @@ define([
     //'app.common',
     //,'app.user'
     //https://github.com/StarterSquad/ngseed
-    //,'app.docs'
-    //,'app.html'
-    //,'app.ui'
+
   ]);
 
   couchPotato.configureApp(app);

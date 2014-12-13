@@ -41,7 +41,15 @@ define([
         }
       });
 
-    $urlRouterProvider.otherwise('/notfound');
+    //$urlRouterProvider.otherwise('/');
+
+    $urlRouterProvider.otherwise(function ($injector, $location) {
+      var $state = $injector.get('$state');
+      $state.go('app.notfound', {
+        title: "Page not found",
+        message: 'Could not find a state associated with url "'+$location.$$url+'"'
+      });
+    });
 
   }]);
 
