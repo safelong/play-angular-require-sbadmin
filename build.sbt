@@ -80,7 +80,8 @@ excludeFilter in (Assets, JshintKeys.jshint) := new FileFilter{
   def accept(f: File) = ".*/plugins/.*".r.pattern.matcher(f.getAbsolutePath).matches
 }
 
-JsEngineKeys.engineType := JsEngineKeys.EngineType.Node
+// This must be turned off when deployed to heroku
+//JsEngineKeys.engineType := JsEngineKeys.EngineType.Node
 
 //RjsKeys.mainModule := "main"
 
