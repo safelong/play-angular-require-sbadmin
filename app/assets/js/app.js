@@ -11,9 +11,7 @@ define([
   'angular-ui-router',
   'angular-bootstrap'
 
-
   ,'./config'
-  ,'sb-admin-2'
   //,'./modules/docs/module'
   //,'./modules/html/module'
   //,'./modules/ui/module'
@@ -25,15 +23,14 @@ define([
   var app = angular.module('app', [
     'scs.couch-potato',
     'ui.router',
-    'ui.bootstrap',
+    'ui.bootstrap'
 
-    //'app.common',
-    'app.dashboard',
-    'app.home'
-    //,'app.user'
-
-    //https://github.com/StarterSquad/ngseed
     ,'app.constants'
+    ,'app.dashboard'
+    ,'app.home'
+    //'app.common',
+    //,'app.user'
+    //https://github.com/StarterSquad/ngseed
     //,'app.docs'
     //,'app.html'
     //,'app.ui'

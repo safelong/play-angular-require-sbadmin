@@ -14,20 +14,19 @@
       'angular-cookies': '../lib/angularjs/angular-cookies',
       'angular-bootstrap': '../lib/angular-ui-bootstrap/ui-bootstrap-tpls.min',
       'angular-ui-router': '../lib/angular-ui-router/angular-ui-router.min',
-      'angular-couch-potato': 'plugins/angular-couch-potato/angular-couch-potato',
+      'angular-couch-potato': '../plugins/angular-couch-potato/angular-couch-potato',
       'bootstrap': '../lib/bootstrap/js/bootstrap',
       'jsRoutes': '/jsroutes',
 
-      'sb-admin-2': 'plugins/sb-admin-2',
-      'datatables': 'plugins/dataTables/jquery.dataTables',
-      'datatables-bootstrap': 'plugins/dataTables/dataTables.bootstrap',
-      'flot': 'plugins/flot/jquery.flot',
-      'flot-resize': 'plugins/flot/jquery.flot.resize',
-      'flot-pie': 'plugins/flot/jquery.flot.pie',
-      'flot-tooltip': 'plugins/flot/jquery.flot.tooltip',
-      'metis-menu': 'plugins/metisMenu/metisMenu',
-      'raphael': 'plugins/morris/raphael.min',
-      'morris': 'plugins/morris/morris.min'
+      'datatables': '../plugins/dataTables/jquery.dataTables',
+      'datatables-bootstrap': '../plugins/dataTables/dataTables.bootstrap',
+      'flot': '../plugins/flot/jquery.flot',
+      'flot-resize': '../plugins/flot/jquery.flot.resize',
+      'flot-pie': '../plugins/flot/jquery.flot.pie',
+      'flot-tooltip': '../plugins/flot/jquery.flot.tooltip',
+      'metis-menu': '../plugins/metisMenu/metisMenu.min',
+      'raphael': '../plugins/morris/raphael.min',
+      'morris': '../plugins/morris/morris.min'
 
     },
     shim: {
@@ -45,13 +44,13 @@
       'angular-couch-potato': ['angular'],
       'bootstrap': ['jquery'],
 
-      'sb-admin-2': ['jquery'],
       'datatables': ['jquery'],
       'datatables-bootstrap': ['datatables'],
       'flot': ['jquery'],
       'flot-resize': ['flot'],
       'flot-pie': ['flot'],
       'flot-tooltip': ['flot'],
+      'metis-menu': ['jquery'],
       'morris': ['raphael'] 
     },
     priority: [

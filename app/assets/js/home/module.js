@@ -25,20 +25,23 @@ define([
               deps: $couchPotatoProvider.resolveDependencies([
                 // 'home/HomeCtrl',
                 // 'home/HeaderCtrl',
-                'home/FooterCtrl'
+                'home/FooterCtrl',
+                'home/sideMenu'
               ])
             }
           }
         }
       })
-      .state('notfound', {
+      .state('app.notfound', {
+        url: '/notfound',
         views: {
-          root: {
+          "content@app": {
             templateUrl: '/assets/js/home/notFound.html'
           }
         }
       });
-    $urlRouterProvider.otherwise('/dashboard');
+
+    $urlRouterProvider.otherwise('/notfound');
 
   }]);
 

@@ -14,7 +14,7 @@ define([
   module.config(function($stateProvider, $couchPotatoProvider/*, userResolve*/) {
     $stateProvider
       .state('app.dashboard', {
-        url: '/dashboard',
+        url: '/',
         views: {
           "content@app": {
             controller: 'DashboardCtrl',

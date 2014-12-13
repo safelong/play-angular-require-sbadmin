@@ -3,7 +3,13 @@
 
 // Global Styles
 
+html {
+    position: relative;
+    min-height: 100%;
+}
 body {
+    /* Margin bottom by footer height */
+    margin-bottom: 20px;
     background-color: @gray-lightest;
 }
 
@@ -17,15 +23,29 @@ body {
     padding: 0 15px;
     min-height: 568px;
     background-color: white;
+    margin-top: 51px;
 }
 
 @media(min-width:768px) {
     #page-wrapper {
         position: inherit;
-        margin: 0 0 0 250px;
+        margin: 51px 0 0 250px;
         padding: 0 30px;
         border-left: 1px solid darken(@gray-lightest, 6.5%);
     }
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 20px;
+    background-color: #f5f5f5;
+    margin-left: 250px;
+}
+
+#content {
 }
 
 // Navigation
