@@ -1,8 +1,11 @@
-define(['home/module'], function (module) {
-
+define([
+  'home/module'
+  //'common/services/helper'
+  //,'user/services'
+], function (module) {
   'use strict';
 
-  return module.registerController('HeaderCtrl', function ($scope, userService, helper, $location) {
+  return module.registerController('HeaderCtrl', ['$scope', 'userService', '$location', function ($scope, userService, $location) {
     // Wrap the current user from the service in a watch expression
     $scope.$watch(function() {
       var user = userService.getUser();
@@ -16,6 +19,6 @@ define(['home/module'], function (module) {
       $scope.user = undefined;
       $location.path('/');
     };
-  });
+  }]);
 
 });

@@ -18,12 +18,12 @@ define([
         abstract: true,
         views: {
           root: {
-            controller: 'FooterCtrl',
+            controller: 'HomeCtrl',
             templateUrl: '/assets/js/home/layout.tpl.html',
             resolve: {
               deps: $couchPotatoProvider.resolveDependencies([
-                // 'home/HomeCtrl',
-                // 'home/HeaderCtrl',
+                'home/HomeCtrl',
+                'home/HeaderCtrl',
                 'home/FooterCtrl',
                 'home/sideMenu'
               ])

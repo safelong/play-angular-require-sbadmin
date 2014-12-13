@@ -9,12 +9,12 @@ define(['angular'], function(angular) {
    * (user | property:'name')
    * }}}
    */
-  mod.filter('property', function(value, property) {
+  mod.filter('property', ['value', 'property', function(value, property) {
     if (angular.isObject(value)) {
       if (value.hasOwnProperty(property)) {
         return value[property];
       }
     }
-  });
+  }]);
   return mod;
 });

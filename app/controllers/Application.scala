@@ -17,6 +17,10 @@ object Application extends Controller with Security {
     Ok(views.html.index())
   }
 
+//  def hohoge(hoge: String)  = Action {
+//    Redirect(Routes.)
+//  }
+
   /**
    * Retrieves all routes via reflection.
    * http://stackoverflow.com/questions/12012703/less-verbose-way-of-generating-play-2s-javascript-router

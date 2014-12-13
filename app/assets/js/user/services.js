@@ -1,19 +1,9 @@
 /**
  * User service, exposes user model to the rest of the app.
  */
-// define([
-//   'angular',
-//   'common'
-// ], function (angular) {
-//   'use strict';
-
-//   var mod = angular.module('user.services', [
-//     'yourprefix.common',
-//     'ngCookies'
-//   ]);
 define([
   'angular',
-  'common'
+  'common/module'
 ], function (angular) {
   'use strict';
 
@@ -58,7 +48,7 @@ define([
         token = undefined;
         user = undefined;
         return playRoutes.controllers.Application.logout().post().then(function () {
-          $log.info("Good bye ");
+          $log.info("Good bye");
         });
       },
       getUser: function () {

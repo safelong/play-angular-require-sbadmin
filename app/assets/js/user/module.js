@@ -1,17 +1,16 @@
 define([
   'angular',
   'angular-couch-potato',
-  'angular-ui-router',
-  './services',
-  'common'
+  'angular-ui-router'
+  ,'./services'
+  //,'common/module'
 ], function (angular, couchPotato) {
-
   'use strict';
 
   var module = angular.module('app.user', [
-    'ui.router',
-    'user.services',
-    'app.common'
+    'ui.router'
+    ,'user.services'
+    //,'app.common'
   ]);
 
   module.config(['$stateProvider', '$couchPotatoProvider', function($stateProvider, $couchPotatoProvider) {
@@ -37,9 +36,9 @@ define([
 
   couchPotato.configureApp(module);
 
-  module.run(function ($couchPotato) {
-      module.lazy = $couchPotato;
-  });
+  module.run(['$couchPotato', function ($couchPotato) {
+    module.lazy = $couchPotato;
+  }]);
 
   return module;
 });

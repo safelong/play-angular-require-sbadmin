@@ -12,8 +12,8 @@ define(['dashboard/module'], function(module) {
   //   $scope.user = user;
   // });
 
-  module.registerController('DashboardCtrl', ['$scope', function ($scope) {
-    $scope.user = 'Guest User';
+  module.registerController('DashboardCtrl', ['$scope', 'user', function ($scope, user) {
+    $scope.user = user;
   }]);
 
   return module;

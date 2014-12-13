@@ -15,6 +15,7 @@
       'angular-bootstrap': '../lib/angular-ui-bootstrap/ui-bootstrap-tpls.min',
       'angular-ui-router': '../lib/angular-ui-router/angular-ui-router.min',
       'angular-couch-potato': '../plugins/angular-couch-potato/angular-couch-potato',
+      'angular-ui-anim-in-out': '../plugins/angular-ui-anim-in-out/anim-in-out',
       'bootstrap': '../lib/bootstrap/js/bootstrap',
       'jsRoutes': '/jsroutes',
 
@@ -42,6 +43,7 @@
       'angular-bootstrap': ['angular'],
       'angular-ui-router': [ "angular" ],
       'angular-couch-potato': ['angular'],
+      'angular-ui-anim-in-out': ['angular'],
       'bootstrap': ['jquery'],
 
       'datatables': ['jquery'],

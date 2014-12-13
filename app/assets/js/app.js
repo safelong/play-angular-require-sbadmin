@@ -12,8 +12,12 @@ define([
   'angular-bootstrap'
 
   ,'./config'
+  ,'./common/module'
+  ,'./user/module'
+
   ,'./dashboard/module'
   ,'./home/module'
+
   ,'./modules/charts/module'
   ,'./modules/forms/module'
   ,'./modules/tables/module'
@@ -29,7 +33,13 @@ define([
     'ui.router',
     'ui.bootstrap'
 
+    //,'ngAnimate'
+    //,'anim-in-out'
+
     ,'app.constants'
+    ,'app.common'
+    ,'app.user'
+
     ,'app.dashboard'
     ,'app.home'
 
@@ -90,6 +100,7 @@ define([
   }]);
 
   app.config(['$locationProvider', function($locationProvider) {
+    //https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions#how-to-configure-your-server-to-work-with-html5mode
     $locationProvider.html5Mode(true);
   }]);
 

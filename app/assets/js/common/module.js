@@ -17,9 +17,9 @@ define([
 
   couchPotato.configureApp(module);
 
-  module.run(function ($couchPotato) {
-      module.lazy = $couchPotato;
-  });
+  module.run(['$couchPotato', function ($couchPotato) {
+    module.lazy = $couchPotato;
+  }]);
 
   return module;
 });
