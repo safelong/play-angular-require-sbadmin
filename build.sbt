@@ -7,7 +7,7 @@ import com.typesafe.sbt.web.js.JS
 import play.PlayScala
 
 // TODO Replace with your project's/module's name
-name := """play-angular-require-seed-deriversatile"""
+name := """play-angular-require-sbadmin"""
 
 // TODO Set your organization here; ThisBuild means it will apply to all sub-modules
 organization in ThisBuild := "mmizutani"
