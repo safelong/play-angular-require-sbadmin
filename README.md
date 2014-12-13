@@ -1,4 +1,4 @@
-# Example application for Play+AngularJS+RequireJS.
+# Example application for Play + AngularJS + RequireJS + SB Admin Bootstrap Template.
 
 ## Intro
 
@@ -44,6 +44,11 @@ The JavaScript modules are organized as follows:
 
 This uses the normal JavaScript files and loads libraries from the downloaded WebJars.
 
+### Compile RequireJS Modules
+```
+> web-stage
+```
+
 ### Prod Mode
 
 Running:
@@ -58,9 +63,3 @@ Deployment:
 
 
 This uses the uglified JavaScript files, versioned and compressed assets, and loads WebJars resources from the jsDelivr CDN.
-
-### Activator
-
-This application is also published as a Typesafe Activator template:
-
-http://typesafe.com/activator/template/play-angular-require-seed

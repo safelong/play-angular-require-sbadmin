@@ -9,7 +9,7 @@ define([
 
   couchPotato.configureApp(module);
 
-  module.config(function($stateProvider, $couchPotatoProvider){
+  module.config(['$stateProvider', '$couchPotatoProvider', function($stateProvider, $couchPotatoProvider){
 
     $stateProvider
       .state('app.ui', {
@@ -73,11 +73,11 @@ define([
           }
         }
       });
-  });
+  }]);
 
-  module.run(function($couchPotato){
+  module.run(['$couchPotato', function($couchPotato){
     module.lazy = $couchPotato;
-  });
+  }]);
 
   return module;
 });

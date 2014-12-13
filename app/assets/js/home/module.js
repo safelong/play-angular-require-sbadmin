@@ -11,8 +11,7 @@ define([
 
   couchPotato.configureApp(module);
 
-  module.config(['$stateProvider', '$couchPotatoProvider', '$urlRouterProvider', 
-    function($stateProvider, $couchPotatoProvider, $urlRouterProvider) {
+  module.config(['$stateProvider', '$couchPotatoProvider', '$urlRouterProvider', function($stateProvider, $couchPotatoProvider, $urlRouterProvider) {
 
     $stateProvider
       .state('app', {
@@ -53,9 +52,9 @@ define([
 
   }]);
 
-  module.run(function ($couchPotato) {
+  module.run(['$couchPotato', function ($couchPotato) {
       module.lazy = $couchPotato;
-  });
+  }]);
 
   return module;
 });

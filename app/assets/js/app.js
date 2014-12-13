@@ -47,10 +47,10 @@ define([
 
   couchPotato.configureApp(app);
 
-  app.config(function ($provide, $httpProvider) {
+  app.config(['$provide', '$httpProvider', function ($provide, $httpProvider) {
 
     // Intercept http calls.
-    $provide.factory('ErrorHttpInterceptor', function ($q) {
+    $provide.factory('ErrorHttpInterceptor', ['$q', function ($q) {
       var errorCounter = 0;
       function notifyError(rejection){
         console.log(rejection);
@@ -82,12 +82,16 @@ define([
           return $q.reject(rejection);
         }
       };
-    });
+    }]);
 
     // Add the interceptor to the $httpProvider.
     $httpProvider.interceptors.push('ErrorHttpInterceptor');
 
-  });
+  }]);
+
+  app.config(['$locationProvider', function($locationProvider) {
+    $locationProvider.html5Mode(true);
+  }]);
 
   //app.config(function($provide) {
   //
@@ -133,11 +137,11 @@ define([
   //
   //}]);
 
-  app.run(function ($couchPotato, $rootScope, $state, $stateParams) {
+  app.run(['$couchPotato', '$rootScope', '$state', '$stateParams', function ($couchPotato, $rootScope, $state, $stateParams) {
     app.lazy = $couchPotato;
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
-  });
+  }]);
 
   return app;
 });

@@ -1,7 +1,13 @@
-import WebKeys._
+import com.typesafe.sbt.jse.JsEngineImport.JsEngineKeys
+import com.typesafe.sbt.jshint.Import.JshintKeys
+import com.typesafe.sbt.less.Import.LessKeys
+import com.typesafe.sbt.web.Import.WebKeys
+import com.typesafe.sbt.rjs.Import.RjsKeys
+import com.typesafe.sbt.web.js.JS
+import play.PlayScala
 
 // TODO Replace with your project's/module's name
-name := "play-angular-require-seed-deriversatile"
+name := """play-angular-require-seed-deriversatile"""
 
 // TODO Set your organization here; ThisBuild means it will apply to all sub-modules
 organization in ThisBuild := "mmizutani"
@@ -20,11 +26,11 @@ libraryDependencies ++= Seq(
   filters,
   cache,
   // WebJars (i.e. client-side) dependencies
-  "org.webjars" % "requirejs" % "2.1.14-1",
-  "org.webjars" % "underscorejs" % "1.6.0-3",
-  "org.webjars" % "jquery" % "1.11.1",
-  "org.webjars" % "bootstrap" % "3.1.1-2" exclude("org.webjars", "jquery"),
-  "org.webjars" % "angularjs" % "1.2.18" exclude("org.webjars", "jquery"),
+  "org.webjars" % "requirejs" % "2.1.15",
+  "org.webjars" % "underscorejs" % "1.7.0",
+  "org.webjars" % "jquery" % "2.1.1",
+  "org.webjars" % "bootstrap" % "3.3.1" exclude("org.webjars", "jquery"),
+  "org.webjars" % "angularjs" % "1.2.27" exclude("org.webjars", "jquery"),
   "org.webjars" % "angular-ui-bootstrap" % "0.12.0" exclude("org.webjars", "angularjs"),
   "org.webjars" % "angular-ui-router" % "0.2.13" exclude("org.webjars", "angularjs"),
   "org.webjars" % "angular-blocks" % "0.1.8-1" exclude("org.webjars", "angularjs"),
@@ -73,6 +79,8 @@ excludeFilter in cssCompress := GlobFilter("lib/*.css")
 excludeFilter in (Assets, JshintKeys.jshint) := new FileFilter{
   def accept(f: File) = ".*/plugins/.*".r.pattern.matcher(f.getAbsolutePath).matches
 }
+
+JsEngineKeys.engineType := JsEngineKeys.EngineType.Node
 
 //RjsKeys.mainModule := "main"
 

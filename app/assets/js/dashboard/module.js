@@ -11,7 +11,7 @@ define([
     //,'app.common'
   ]);
 
-  module.config(function($stateProvider, $couchPotatoProvider/*, userResolve*/) {
+  module.config(['$stateProvider', '$couchPotatoProvider', function($stateProvider, $couchPotatoProvider/*, userResolve*/) {
     $stateProvider
       .state('app.dashboard', {
         url: '/',
@@ -31,13 +31,13 @@ define([
           title: 'Dashboard'
         }
       });
-  });
+  }]);
 
   couchPotato.configureApp(module);
 
-  module.run(function ($couchPotato) {
+  module.run(['$couchPotato', function ($couchPotato) {
       module.lazy = $couchPotato;
-  });
+  }]);
 
   return module;
 });

@@ -12,9 +12,9 @@ define(['dashboard/module'], function(module) {
   //   $scope.user = user;
   // });
 
-  module.registerController('DashboardCtrl', function ($scope) {
+  module.registerController('DashboardCtrl', ['$scope', function ($scope) {
     $scope.user = 'Guest User';
-  });
+  }]);
 
   return module;
 
