@@ -31,6 +31,7 @@ libraryDependencies ++= Seq(
   "org.webjars" % "jquery" % "2.1.1",
   "org.webjars" % "bootstrap" % "3.3.1" exclude("org.webjars", "jquery"),
   "org.webjars" % "angularjs" % "1.2.27" exclude("org.webjars", "jquery"),
+  "org.webjars" % "angular-sanitize" % "1.2.26" exclude("org.webjars", "jquery"),
   "org.webjars" % "angular-ui-bootstrap" % "0.12.0" exclude("org.webjars", "angularjs"),
   "org.webjars" % "angular-ui-router" % "0.2.13" exclude("org.webjars", "angularjs"),
   "org.webjars" % "angular-blocks" % "0.1.8-1" exclude("org.webjars", "angularjs"),
@@ -62,12 +63,17 @@ scalacOptions in ThisBuild ++= Seq(
 // digest = Adds hash to filename
 // gzip = Zips all assets, Asset controller serves them automatically when client accepts them
 //pipelineStages := Seq(rjs, concat, cssCompress, digest, gzip)
+//pipelineStages := Seq(rjs)
 
 // RequireJS with sbt-rjs (https://github.com/sbt/sbt-rjs#sbt-rjs)
 // ~~~
+// The r.js optimizer won't find jsRoutes so we must tell it to ignore it
+// Override RequireJS path mappings: module_id -> (build_path -> production_path)
 RjsKeys.paths += ("jsRoutes" -> ("/jsroutes" -> "empty:"))
 
-//RjsKeys.buildProfile := JS.Object("paths" -> JS.Array(JS.Object("jquery" -> "empty", "angular" -> "empty")))
+val checkCdn = taskKey[Unit]("Check the CDN")
+
+checkCdn := println(RjsKeys.paths.value)
 
 RjsKeys.generateSourceMaps := false
 

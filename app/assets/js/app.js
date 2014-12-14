@@ -87,22 +87,6 @@ define([
     $locationProvider.html5Mode(true);
   }]);
 
-  //app.config(function($provide) {
-  //
-  //  // with this, you can use $log('Message') same as $log.info('Message');
-  //  $provide.decorator('$log', ['$delegate', function($delegate) {
-  //    // create a new function to be returned below as the $log service (instead of the $delegate)
-  //    function logger() {
-  //      // if $log fn is called directly, default to "info" message
-  //      logger.info.apply(logger, arguments);
-  //    }
-  //    // add all the $log props into our new logger fn
-  //    angular.extend(logger, $delegate);
-  //    return logger;
-  //  }]);
-  //
-  //});
-
   // For debugging angular-ui-router
   // http://stackoverflow.com/questions/20745761/what-is-the-angular-ui-router-lifecycle-for-debugging-silent-errors
   //app.run(['$rootScope', function($rootScope) {
@@ -131,12 +115,12 @@ define([
   //
   //}]);
 
-  app.config(function($breadcrumbProvider) {
+  app.config(['$breadcrumbProvider', function($breadcrumbProvider) {
     $breadcrumbProvider.setOptions({
       prefixStateName: 'app'
       ,templateUrl: 'assets/js/home/breadcrumb.tpl.html'
     });
-  });
+  }]);
 
   app.run(['$couchPotato', '$rootScope', '$state', '$stateParams', function ($couchPotato, $rootScope, $state, $stateParams) {
     // assign app.lazy so the registerXXX functions work

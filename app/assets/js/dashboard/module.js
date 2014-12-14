@@ -1,16 +1,14 @@
 define([
   'angular',
   'angular-couch-potato',
-  'angular-ui-router',
-  'angular-sanitize'
+  'angular-ui-router'
   ,'user/services'
 ], function (angular, couchPotato) {
 
   'use strict';
 
   var module = angular.module('app.dashboard', [
-    'ui.router',
-    'ngSanitize'
+    'ui.router'
     ,'user.services'
   ]);
 

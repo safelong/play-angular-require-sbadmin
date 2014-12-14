@@ -6,6 +6,8 @@
   requirejs.config({
     // Packages = top-level folders; loads a contained file named 'main.js"
     //packages: ['common', 'home', 'user', 'dashboard', 'forms'],
+    //To get timely, correct error triggers in IE, force a define/shim exports check.
+    enforceDefine: true,
     paths: {
       'jsRoutes': '/jsroutes',
 
@@ -17,7 +19,7 @@
       'angular-bootstrap': '../lib/angular-ui-bootstrap/ui-bootstrap-tpls.min',
       'angular-ui-router': '../lib/angular-ui-router/angular-ui-router.min',
       'angular-couch-potato': '../plugins/angular-couch-potato/angular-couch-potato',
-      'angular-sanitize': '../plugins/angular-sanitize/angular-sanitize.min',
+      'angular-sanitize': '../lib/angular-sanitize/angular-sanitize.min',
       'angular-animate': '../plugins/angular-animate/angular-animate.min',
       'angular-breadcrumb': '../plugins/angular-breadcrumb/angular-breadcrumb.min',
       'bootstrap': '../lib/bootstrap/js/bootstrap',
@@ -50,7 +52,7 @@
       'angular-couch-potato': ['angular'],
       'angular-sanitize': ['angular'],
       'angular-animate': ['angular'],
-      'angular-breadcrumb': ['angular', 'angular-sanitize'],
+      'angular-breadcrumb': ['angular', 'angular-ui-router'],
       'bootstrap': ['jquery'],
 
       'datatables': ['jquery'],
@@ -62,11 +64,6 @@
       'metis-menu': ['jquery'],
       'morris': ['raphael']
     }
-    //,priority: [
-    //  'jquery',
-    //  'bootstrap',
-    //  'angular'
-    //]
   });
 
   requirejs.onError = function (err) {
