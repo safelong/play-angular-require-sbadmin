@@ -6,8 +6,6 @@
   requirejs.config({
     // Packages = top-level folders; loads a contained file named 'main.js"
     //packages: ['common', 'home', 'user', 'dashboard', 'forms'],
-    //To get timely, correct error triggers in IE, force a define/shim exports check.
-    enforceDefine: true,
     paths: {
       'jsRoutes': '/jsroutes',
 
