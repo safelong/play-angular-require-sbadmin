@@ -9,6 +9,9 @@ This template application shows how to organize your application with
 This is based on the seed application (https://github.com/mariussoutier/play-angular-require-seed), which shows an alternative way of organizing modules than the official
 [Angular-Play-Seed](https://github.com/typesafehub/angular-seed-play).
 
+## Demo
+https://play-angular-require-sbadmin.herokuapp.com/
+
 ## Code Organization
 
 The JavaScript modules are organized as follows:
