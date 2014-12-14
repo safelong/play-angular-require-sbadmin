@@ -4,6 +4,7 @@
 define([
   'angular',
   'angular-couch-potato',
+  'angular-cookies',
   'common/module',
   'user/module'
 ], function (angular, couchPotato) {

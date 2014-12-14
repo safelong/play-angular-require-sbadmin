@@ -7,6 +7,8 @@
     // Packages = top-level folders; loads a contained file named 'main.js"
     //packages: ['common', 'home', 'user', 'dashboard', 'forms'],
     paths: {
+      'jsRoutes': '/jsroutes',
+
       'requirejs': '../lib/requirejs/require',
       'jquery': '../lib/jquery/jquery',
       'angular': '../lib/angularjs/angular',
@@ -16,22 +18,26 @@
       'angular-ui-router': '../lib/angular-ui-router/angular-ui-router.min',
       'angular-couch-potato': '../plugins/angular-couch-potato/angular-couch-potato',
       'angular-sanitize': [
-        '//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.min'
-        //,'../plugin/angular-sanitize/angular-sanitize.min'
+        '//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.min',
+        '../plugins/angular-sanitize/angular-sanitize.min'
       ],
+      'angular-animate': [
+        '//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-animate.min',
+        '../plugins/angular-animate/angular-animate.min'
+      ],
+      'angular-breadcrumb': '../plugins/angular-breadcrumb/angular-breadcrumb.min',
       'bootstrap': '../lib/bootstrap/js/bootstrap',
-      'jsRoutes': '/jsroutes',
 
       'datatables': '../plugins/dataTables/jquery.dataTables',
       'datatables-bootstrap': '../plugins/dataTables/dataTables.bootstrap',
+      'domReady': '../plugins/requirejs-domready/domReady',
       'flot': '../plugins/flot/jquery.flot',
       'flot-resize': '../plugins/flot/jquery.flot.resize',
       'flot-pie': '../plugins/flot/jquery.flot.pie',
       'flot-tooltip': '../plugins/flot/jquery.flot.tooltip.min',
       'metis-menu': '../plugins/metisMenu/metisMenu.min',
       'raphael': '../plugins/morris/raphael.min',
-      'morris': '../plugins/morris/morris.min',
-      'angular-breadcrumb': '../plugins/angular-breadcrumb/angular-breadcrumb.min'
+      'morris': '../plugins/morris/morris.min'
 
     },
     shim: {
@@ -40,14 +46,17 @@
         // it's not a RequireJS module, so we have to tell it what var is returned
         exports: 'jsRoutes'
       },
+
       // Hopefully this all will not be necessary but can be fetched from WebJars in the future
       'angular': { deps: ['jquery'], exports: 'angular' },
       'angular-route': ['angular'],
       'angular-cookies': ['angular'],
       'angular-bootstrap': ['angular'],
-      'angular-ui-router': [ "angular" ],
+      'angular-ui-router': ['angular'],
       'angular-couch-potato': ['angular'],
       'angular-sanitize': ['angular'],
+      'angular-animate': ['angular'],
+      'angular-breadcrumb': ['angular'],
       'bootstrap': ['jquery'],
 
       'datatables': ['jquery'],
@@ -57,8 +66,7 @@
       'flot-pie': ['flot'],
       'flot-tooltip': ['flot'],
       'metis-menu': ['jquery'],
-      'morris': ['raphael'],
-      'angular-breadcrumb': ['angular']
+      'morris': ['raphael']
     },
     priority: [
       'jquery',
@@ -71,13 +79,15 @@
     console.log(err);
   };
 
+  /*
+   * This block of code is necessary to defer angular's bootstrap phase.
+   * http://code.angularjs.org/1.3.6/docs/guide/bootstrap#overview_deferred-bootstrap
+   */
   // Load the app. This is kept minimal so it doesn't need much updating.
   require([
-    'angular', 
-    'angular-cookies',
-    'jquery', 
-    'bootstrap', 
-    
+    'angular',
+    'jquery',
+    'bootstrap',
     './app',
     './includes'
   ], function (angular) {
