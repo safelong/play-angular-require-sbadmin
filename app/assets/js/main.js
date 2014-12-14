@@ -17,14 +17,8 @@
       'angular-bootstrap': '../lib/angular-ui-bootstrap/ui-bootstrap-tpls.min',
       'angular-ui-router': '../lib/angular-ui-router/angular-ui-router.min',
       'angular-couch-potato': '../plugins/angular-couch-potato/angular-couch-potato',
-      'angular-sanitize': [
-        '//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.min',
-        '../plugins/angular-sanitize/angular-sanitize.min'
-      ],
-      'angular-animate': [
-        '//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-animate.min',
-        '../plugins/angular-animate/angular-animate.min'
-      ],
+      'angular-sanitize': '../plugins/angular-sanitize/angular-sanitize.min',
+      'angular-animate': '../plugins/angular-animate/angular-animate.min',
       'angular-breadcrumb': '../plugins/angular-breadcrumb/angular-breadcrumb.min',
       'bootstrap': '../lib/bootstrap/js/bootstrap',
 
