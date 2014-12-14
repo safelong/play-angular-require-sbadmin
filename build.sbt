@@ -61,11 +61,13 @@ scalacOptions in ThisBuild ++= Seq(
 // rjs = RequireJS, uglifies, shrinks to one file, replaces WebJars with CDN
 // digest = Adds hash to filename
 // gzip = Zips all assets, Asset controller serves them automatically when client accepts them
-pipelineStages := Seq(rjs, concat, cssCompress, digest, gzip)
+//pipelineStages := Seq(rjs, concat, cssCompress, digest, gzip)
 
 // RequireJS with sbt-rjs (https://github.com/sbt/sbt-rjs#sbt-rjs)
 // ~~~
 RjsKeys.paths += ("jsRoutes" -> ("/jsroutes" -> "empty:"))
+
+//RjsKeys.buildProfile := JS.Object("paths" -> JS.Array(JS.Object("jquery" -> "empty", "angular" -> "empty")))
 
 RjsKeys.generateSourceMaps := false
 
@@ -100,6 +102,15 @@ excludeFilter in (Assets, JshintKeys.jshint) := new FileFilter{
 // JavaScript linting with sbt-jshint (https://github.com/sbt/sbt-jshint)
 // ~~~
 // JshintKeys.config := ".jshintrc"
+
+
+// Disable generation of scaladoc in dist task
+publishArtifact in (Compile, packageDoc) := false
+
+publishArtifact in packageDoc := false
+
+sources in (Compile,doc) := Seq.empty
+
 
 // All work and no play...
 emojiLogs

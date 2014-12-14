@@ -50,7 +50,7 @@
       'angular-couch-potato': ['angular'],
       'angular-sanitize': ['angular'],
       'angular-animate': ['angular'],
-      'angular-breadcrumb': ['angular'],
+      'angular-breadcrumb': ['angular', 'angular-sanitize'],
       'bootstrap': ['jquery'],
 
       'datatables': ['jquery'],
@@ -61,12 +61,12 @@
       'flot-tooltip': ['flot'],
       'metis-menu': ['jquery'],
       'morris': ['raphael']
-    },
-    priority: [
-      'jquery',
-      'bootstrap',
-      'angular'
-    ]
+    }
+    //,priority: [
+    //  'jquery',
+    //  'bootstrap',
+    //  'angular'
+    //]
   });
 
   requirejs.onError = function (err) {

@@ -11,6 +11,7 @@ define([
 	,'user/services'
 
 	,'dashboard/module'
+
 	,'home/module'
 
 	,'modules/charts/module'
