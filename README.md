@@ -31,6 +31,24 @@ The JavaScript modules are organized as follows:
 
 ## Trying It Out
 
+Firstly, clone this git repository:
+```bash
+git clone https://github.com/mmizutani/play-angular-require-sbadmin.git
+```
+Then run the `activator` shell/batch script in the top directory
+```bash
+./activator
+```
+to enter the sbt console.
+Finally, build and launch the application in either the development mode
+```bash
+> ~run
+```
+or the production mode
+```bash
+> start
+```
+
 ### Dev Mode
 
 * Load dependencies via `sbt update`

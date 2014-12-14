@@ -18,6 +18,7 @@ define([
 	,'modules/forms/module'
 	,'modules/tables/module'
 	,'modules/ui/module'
+	,'modules/multilevel/module'
 
 ], function () {
     'use strict';

@@ -35,6 +35,7 @@ define([
     ,'app.forms'
     ,'app.tables'
     ,'app.ui'
+    ,'app.multilevel'
   ]);
 
   // setup the registerXXX functions (registerController, registerDirective, ...)
