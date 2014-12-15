@@ -1,0 +1,22 @@
+{
+    "id": "play-angular-require-sbadmin",
+    "name": "play-angular-require-sbadmin",
+    "source": "github",
+    "description": "Play2 seed project with and AngularJS, RequireJS and SB Admin Bootstrap Template",    
+    "icon" : "https://d3ko533tu1ozfq.cloudfront.net/clickstart/play2_icon.png", 
+    "supported-by" : "community", 
+    "order" : 5,
+
+    "runtime": {
+        "type": "play2",
+        "app-variables" : { 
+            "proxyBuffering" : false, 
+            "http_version" : "1.1"
+        }
+    },
+    "build-with-jenkins": {
+        "template": {
+            "type": "https://raw.github.com/mmizutani/play-angular-require-sbadmin/master/jenkins.xml"
+        }
+    }
+}

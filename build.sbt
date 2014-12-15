@@ -28,7 +28,7 @@ libraryDependencies ++= Seq(
   // WebJars (i.e. client-side) dependencies
   "org.webjars" % "requirejs" % "2.1.15",
   "org.webjars" % "underscorejs" % "1.7.0",
-  "org.webjars" % "jquery" % "2.1.1",
+  "org.webjars" % "jquery" % "1.11.1", // 2.1.1
   "org.webjars" % "bootstrap" % "3.3.1" exclude("org.webjars", "jquery"),
   "org.webjars" % "angularjs" % "1.2.27" exclude("org.webjars", "jquery"),
   "org.webjars" % "angular-sanitize" % "1.2.26" exclude("org.webjars", "jquery"),
