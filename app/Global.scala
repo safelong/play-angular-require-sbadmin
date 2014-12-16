@@ -32,8 +32,8 @@ object Global extends WithFilters(new GzipFilter(shouldGzip =
        //NotFound(views.html.errors.error404(request))
        // URL rewriting so that reloading does not cause a routing error with html5mode on angular-ui-router
        // Prepanding a hash tag to prevent redirect loop
-       //Redirect("/#" + request.path)
-       NotFound("404 - Page not found error\n" + request.path)
+       Redirect("/#" + request.path)
+       //NotFound("404 - Page not found error\n" + request.path)
      )
   }
 

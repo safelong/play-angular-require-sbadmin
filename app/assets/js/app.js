@@ -85,9 +85,9 @@ define([
 
   app.config(['$locationProvider', function($locationProvider) {
     //https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions#how-to-configure-your-server-to-work-with-html5mode
-    // if(window.history && history.pushState) {
-    //   $locationProvider.html5Mode(true);
-    // }
+    if(window.history && history.pushState) {
+      $locationProvider.html5Mode(true);
+    }
   }]);
 
   // For debugging angular-ui-router
