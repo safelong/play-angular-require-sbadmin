@@ -19,7 +19,7 @@
       'angular-couch-potato': '../plugins/angular-couch-potato/angular-couch-potato',
       'angular-sanitize': '../lib/angular-sanitize/angular-sanitize.min',
       'angular-animate': '../plugins/angular-animate/angular-animate.min',
-      'angular-breadcrumb': '../plugins/angular-breadcrumb/angular-breadcrumb.min',
+      'angular-breadcrumb': '../plugins/angular-breadcrumb/angular-breadcrumb',
       'bootstrap': '../lib/bootstrap/js/bootstrap',
 
       'datatables': '../plugins/dataTables/jquery.dataTables',

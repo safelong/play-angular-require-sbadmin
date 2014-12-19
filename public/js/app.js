@@ -90,6 +90,13 @@ define([
     }
   }]);
 
+  app.config(['$breadcrumbProvider', function($breadcrumbProvider) {
+    $breadcrumbProvider.setOptions({
+      prefixStateName: 'app'
+      ,templateUrl: 'assets/js/home/breadcrumb.tpl.html'
+    });
+  }]);
+
   // For debugging angular-ui-router
   // http://stackoverflow.com/questions/20745761/what-is-the-angular-ui-router-lifecycle-for-debugging-silent-errors
   //app.run(['$rootScope', function($rootScope) {
@@ -117,13 +124,6 @@ define([
   //   });
   //
   //}]);
-
-  app.config(['$breadcrumbProvider', function($breadcrumbProvider) {
-    $breadcrumbProvider.setOptions({
-      prefixStateName: 'app'
-      ,templateUrl: 'assets/js/home/breadcrumb.tpl.html'
-    });
-  }]);
 
   app.run(['$couchPotato', '$rootScope', '$state', '$stateParams', function ($couchPotato, $rootScope, $state, $stateParams) {
     // assign app.lazy so the registerXXX functions work
