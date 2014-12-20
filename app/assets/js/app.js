@@ -11,8 +11,9 @@ define([
   'angular-ui-router',
   'angular-bootstrap',
   'angular-sanitize',
+  'angular-animate',
   'angular-breadcrumb'
-], function(angular, couchPotato, $) {
+], function (angular, couchPotato, $) {
   'use strict';
 
   // We must already declare most dependencies here (except for common), or the submodules' routes
@@ -22,6 +23,7 @@ define([
     'ui.router',
     'ui.bootstrap',
     'ngSanitize',
+    'ngAnimate',
     'ncy-angular-breadcrumb'
 
     ,'app.constants'
@@ -83,17 +85,16 @@ define([
 
   }]);
 
-  app.config(['$locationProvider', function($locationProvider) {
-    //https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions#how-to-configure-your-server-to-work-with-html5mode
+  app.config(['$locationProvider', function ($locationProvider) {
     if(window.history && history.pushState) {
       $locationProvider.html5Mode(true);
     }
   }]);
 
-  app.config(['$breadcrumbProvider', function($breadcrumbProvider) {
+  app.config(['$breadcrumbProvider', function ($breadcrumbProvider) {
     $breadcrumbProvider.setOptions({
-      prefixStateName: 'app'
-      ,templateUrl: 'assets/js/home/breadcrumb.tpl.html'
+      prefixStateName: 'app',
+      templateUrl: 'assets/js/home/breadcrumb.tpl.html'
     });
   }]);
 

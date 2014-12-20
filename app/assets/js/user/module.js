@@ -17,7 +17,7 @@ define([
 
   module.config(['$stateProvider', '$couchPotatoProvider', function($stateProvider, $couchPotatoProvider) {
     $stateProvider
-      .state('app.login', {
+      .state('login', {
         url: '/login',
         views: {
           root: {

@@ -6,9 +6,10 @@
 
 <div id="page-wrapper">
   <div ncy-breadcrumb></div>
-  <div id="content" data-ui-view="content"></div><!-- /#content -->
+  <div class="span12 ui-view-container">
+  	<div id="content" ui-view="content"></div>
+  </div>
 </div>
-<!-- /#page-wrapper -->
 
 <div data-ng-include="'assets/js/home/footer.tpl.html'"></div>
 
