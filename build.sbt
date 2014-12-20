@@ -62,7 +62,8 @@ scalacOptions in ThisBuild ++= Seq(
 // rjs = RequireJS, uglifies, shrinks to one file, replaces WebJars with CDN
 // digest = Adds hash to filename
 // gzip = Zips all assets, Asset controller serves them automatically when client accepts them
-pipelineStages := Seq(rjs, concat, cssCompress, digest, gzip)
+// Uncomment this if you want to run all the asset pipeline stages for production
+//pipelineStages := Seq(rjs, concat, cssCompress, digest, gzip)
 
 // RequireJS with sbt-rjs (https://github.com/sbt/sbt-rjs#sbt-rjs)
 // ~~~
